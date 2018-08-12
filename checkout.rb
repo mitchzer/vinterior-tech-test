@@ -17,10 +17,10 @@ class Checkout
 
   def total
     # Here, the choice of calculating first the chair discount or the global price discount may have an impact on some specific baskets
-    # I propose to calculate first the chair discount, then the global price discount
-    @total = self.total_before_discount
-    @total = @total - @promotional_rules.discount_on_chairs(@basket)
-    @total = @total - @promotional_rules.dicount_on_global_price(@total)
-    @total.round(2)
+    # I suggest to calculate first the chair discount, then the global price discount
+    @final = self.total_before_discount
+    @final = @final - @promotional_rules.discount_on_chairs(@basket)
+    @final = @final - @promotional_rules.dicount_on_global_price(@final)
+    @final.round(2)
   end
 end
