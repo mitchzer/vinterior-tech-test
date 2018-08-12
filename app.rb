@@ -50,7 +50,7 @@ checkouts.each do |co|
   puts "#{co.basket.count { |product| product.code == 1 }} #{product1.name}"
   puts "#{co.basket.count { |product| product.code == 2 }} #{product2.name}"
   puts "#{co.basket.count { |product| product.code == 3 }} #{product3.name}"
-  puts "-> You will pay £#{co.total} instead of £#{co.total_before_discount}"
+  puts "-> You will pay £#{co.total} - instead of £#{co.total_before_discount.round(2)}"
   puts ""
 end
 puts "Thank you for coming! :)"
